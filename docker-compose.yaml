@@ -1,4 +1,4 @@
 services:
   okv2:
-    build: .
+    build:
     web: Dockerfile
