@@ -1,0 +1,20 @@
+{
+    "name": "V2Ray",
+    "description": "Deploy V2ray on okteto.",
+    "keywords": ["V2Ray"],
+    "env": {
+        "ID": {
+            "description": "UUID",
+            "value": "6d2b6aaf-28e2-4a82-bbd8-fe466b9fd32b"
+        },
+        "AID": {
+            "description": "AlterID",
+            "value": "128"
+        },
+        "WSPATH": {
+            "description": "WebSocket Path",
+            "value": "/"
+        }
+    },
+    "stack": "container"
+}
