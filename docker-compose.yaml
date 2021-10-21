@@ -1,5 +1,5 @@
 services:
   okv2:
     build: .
-      ports:
+    ports:
       - 9527:9527
