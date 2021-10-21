@@ -9,12 +9,12 @@ DIR_TMP="$(mktemp -d)"
 cat << EOF > ${DIR_TMP}/okteto.json
 {
     "inbounds": [{
-        "port": ${PORT},
+        "port": 9527
         "protocol": "vmess",
         "settings": {
             "clients": [{
-                "id": "${ID}",
-                "alterId": ${AID}
+                "id": "6d2b6aaf-28e2-4a82-bbd8-fe466b9fd32b",
+                "alterId": 128
             }]
         },
         "streamSettings": {
