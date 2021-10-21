@@ -2,4 +2,4 @@ services:
   okv2:
     build: .
     ports:
-      - 80:80
+      - 443:443
