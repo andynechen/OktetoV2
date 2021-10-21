@@ -1,5 +1,4 @@
 services:
   okv2:
     build: .
-    ports:
-      - 443:443
+    web: Dockerfile
