@@ -1,6 +1,5 @@
 services:
   okv2:
     build: .
-    shm_size: 512mb
     ports:
       - "80:80"
