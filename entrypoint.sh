@@ -5,16 +5,21 @@ DIR_CONFIG="/etc/v2ray"
 DIR_RUNTIME="/usr/bin"
 DIR_TMP="$(mktemp -d)"
 
+ID=6d2b6aaf-28e2-4a82-bbd8-fe466b9fd32b
+AID=128
+WSPATH=/
+PORT=80
+
 # Write V2Ray configuration
-cat << EOF > ${DIR_TMP}/okteto.json
+cat << EOF > ${DIR_TMP}/163.json
 {
     "inbounds": [{
-        "port": 9527
+        "port": ${PORT},
         "protocol": "vmess",
         "settings": {
             "clients": [{
-                "id": "6d2b6aaf-28e2-4a82-bbd8-fe466b9fd32b",
-                "alterId": 128
+                "id": "${ID}",
+                "alterId": ${AID}
             }]
         },
         "streamSettings": {
@@ -36,7 +41,7 @@ busybox unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
 
 # Convert to protobuf format configuration
 mkdir -p ${DIR_CONFIG}
-${DIR_TMP}/v2ctl config ${DIR_TMP}/okteto.json > ${DIR_CONFIG}/config.pb
+${DIR_TMP}/v2ctl config ${DIR_TMP}/163.json > ${DIR_CONFIG}/config.pb
 
 # Install V2Ray
 install -m 755 ${DIR_TMP}/v2ray ${DIR_RUNTIME}
